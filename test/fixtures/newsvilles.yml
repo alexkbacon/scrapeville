@@ -1,12 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  title_url: MyString
   title: MyString
   body: MyText
   time: MyString
   image_url: MyString
 
 two:
+  title_url: MyString
   title: MyString
   body: MyText
   time: MyString

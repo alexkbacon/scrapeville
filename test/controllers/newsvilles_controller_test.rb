@@ -18,7 +18,7 @@ class NewsvillesControllerTest < ActionController::TestCase
 
   test "should create newsville" do
     assert_difference('Newsville.count') do
-      post :create, newsville: { body: @newsville.body, image_url: @newsville.image_url, time: @newsville.time, title: @newsville.title }
+      post :create, newsville: { body: @newsville.body, image_url: @newsville.image_url, time: @newsville.time, title: @newsville.title, title_url: @newsville.title_url }
     end
 
     assert_redirected_to newsville_path(assigns(:newsville))
@@ -35,7 +35,7 @@ class NewsvillesControllerTest < ActionController::TestCase
   end
 
   test "should update newsville" do
-    patch :update, id: @newsville, newsville: { body: @newsville.body, image_url: @newsville.image_url, time: @newsville.time, title: @newsville.title }
+    patch :update, id: @newsville, newsville: { body: @newsville.body, image_url: @newsville.image_url, time: @newsville.time, title: @newsville.title, title_url: @newsville.title_url }
     assert_redirected_to newsville_path(assigns(:newsville))
   end
 
