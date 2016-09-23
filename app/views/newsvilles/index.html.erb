@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Newsville</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Time</th>
+      <th>Image url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @newsvilles.each do |newsville| %>
+      <tr>
+        <td><a href='<%= newsville.at_css('.esc-lead-article-title a')['href'] %>'
+        target='_blank'>
+          <%= newsville.at_css('.titletext').text %></a>
+        </td>
+        <td><%= newsville.at_css('.esc-lead-snippet-wrapper').text%></td>
+        <td><%= newsville.at_css('.al-attribution-timestamp').text %></td>
+        <td><%= image_tag newsville.at_css('.esc-thumbnail-image')['src'] %></td>
+        
+        <td><%= link_to 'Edit', edit_newsville_path(newsville) %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Newsville', new_newsville_path %>
