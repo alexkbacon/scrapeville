@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title url:</strong>
-  <%= @newsville.title_url %>
+  <strong>Link to:</strong>
+  <%= link_to "Original Story", @newsville.title_url, :target => '_blank' %>
 </p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Headline:</strong>
   <%= @newsville.title %>
 </p>
 
@@ -16,8 +16,8 @@
 </p>
 
 <p>
-  <strong>Time:</strong>
-  <%= @newsville.time %>
+  <strong>Posted</strong>
+  <%= time_ago_in_words(@newsville.created_at) %> ago
 </p>
 
 <p>
@@ -25,5 +25,17 @@
   <%= @newsville.image_url %>
 </p>
 
-<%= link_to 'Edit', edit_newsville_path(@newsville) %> |
-<%= link_to 'Back', newsvilles_path %>
+
+
+<hr>
+
+<%= render @newsville.comments %>
+  <%= simple_form_for [@newsville, Comment.new] do |comment| %>
+  <%= comment.input :body %>
+  <%= comment.submit "Add Comment", class: "btn btn-danger" %>
+<% end %>
+<hr>
+<%= link_to 'Back to Newsvilles', newsvilles_path, class: "btn btn-info btn-sm" %>
+
+    
+    

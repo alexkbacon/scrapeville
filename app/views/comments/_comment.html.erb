@@ -1,0 +1,12 @@
+<div class="col-md-12">
+    <div class="caption-full">
+        <h4 class="pull-right">Was posted <%= time_ago_in_words(comment.created_at) %> ago</h4>
+        <h4>Comment by <%= comment.user.username %></h4>
+        
+        <p><%= comment.body %></p>
+    </div>
+</div>
+
+
+
+
