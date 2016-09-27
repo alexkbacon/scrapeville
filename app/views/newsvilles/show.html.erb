@@ -35,7 +35,7 @@
 
 <%= render @newsville.comments %>
   <%= simple_form_for [@newsville, Comment.new] do |comment| %>
-  <%= comment.input :body %>
+  <%= comment.input :body, label: false, placeholder: 'Add Comment Here' %>
   <%= comment.submit "Add Comment", class: "btn btn-danger" %>
 <% end %>
 <hr>
